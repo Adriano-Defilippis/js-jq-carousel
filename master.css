@@ -17,7 +17,8 @@
 }
 
 .slider{
-  max-width: 80%;
+  width: 80%;
+  height: 80%;
 }
 
 .slider img{
