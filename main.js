@@ -10,8 +10,15 @@ $(document).ready(function(){
   //Azione per scrorrere in avanti
   next.click(nextSlide);
   prev.click(prevSlide);
+  // activatePallino();
+  console.log($('.slider img'));
 
 });
+
+console.log($('.pallini span'));
+console.log($('.slider img'));
+
+
 
 
 
@@ -20,30 +27,43 @@ $(document).ready(function(){
 
 //Funzione per le azioni del click sui pulsanti per scrorre le immagini in un carousel
 function nextSlide(){
-  var img = $('img.active');
+  var active = $('img.active, .pallini span.active');
 
-  if (img.hasClass("end")) {
-    img.removeClass("active");
-    $('img.start').addClass('active');
+  if (active.hasClass("end")) {
+    active.removeClass("active");
+    $('img.start, .pallini span:first-child').addClass('active');
 
   }else{
-    img.removeClass("active");
-    img.next("img").addClass("active");
-  }
+    active.removeClass("active");
+    active.next().addClass("active");
+
+}
+  //Devo assegnare il colore al pallino equivalente all'indice della foto selezionata
 
 };
+
+
 
 //Funzione per mostrare Slide Precedente
 function prevSlide(){
-  var img = $('img.active');
+  var active = $('img.active, .pallini span.active');
+  if (active.hasClass("start")) {
 
-  if (img.hasClass("start")) {
     img.removeClass("active");
-    $('img.end').addClass('active');
+    $('img.end, .pallini span:last-child').addClass('active');
 
   }else{
-    img.removeClass("active");
-    img.next("img").addClass("active");
+    active.removeClass("active");
+    active.prev().addClass("active");
+    console.log($('.slider img'));
+
   }
 
 };
+
+//Funzione per comparare indice img ed indice del pallino
+//ed assegnare a quest'ultimo un colore
+function activatePallino(object){
+
+
+}
