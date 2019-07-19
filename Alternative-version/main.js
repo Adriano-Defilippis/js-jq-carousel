@@ -7,33 +7,38 @@ $(document).ready(function(){
   var next = $('.next');
   var firstImg = $('.slider img:first-child');
   var lastImg = $('.slider img:last-child');
-  var firstPallino = $('.pallini span:first-child');
+  var firstPallino = $('.pallini');
   //Lunghezza array che contiene le immagini
   var arrayImg = $('.slider img').length;
   var pallini = $('.pallini');
+  //Il documento viene caricato con almeno un primo pallino
+  //con classe .active impostata.
+  var nuovoSpan = document.createElement("span");
   //Contatore di appoggio per inserire un pallino ad ogni foto
-  var element = 0;
+  var element = 1;
 
   //Assegno in base ai selettori JQuery la class start ed end
   //al primo figlio e all'ultimo del loro contenitore .slider
   //in modo tale da non doverla aggiungere in Html a mano
   firstImg.addClass('start active');
   lastImg.addClass('end');
+  //Creo il primo span del pallino con la classe impostata ad .active
+  document.getElementById('palliniId').appendChild(nuovoSpan);
+  $('#palliniId span').addClass('active');
 
 
   console.log(arrayImg);
 
   //Creo i pallini e li appendo al contenitore t fino a quando
   //il numero dei pallini è uguale a quello delle immagini
-  while (element < arrayImg) {
+  //NB: Partiamo da 1 pallino e non da 0
+    while (element < arrayImg) {
 
-    var x = document.createElement("span");                        // Create a <p> node
-    var t = document.getElementById('palliniId')    // Create a text node
-    t.appendChild(x);
-    element++
-  }
-
-  firstPallino.addClass('active');
+      var x = document.createElement("span");                        // Create a <p> node
+      var t = document.getElementById('palliniId')    // Create a text node
+      t.appendChild(x);
+      element++
+    }
 
 
 
