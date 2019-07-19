@@ -23,6 +23,8 @@ $(document).ready(function(){
 
   console.log(arrayImg);
 
+  //Creo i pallini e li appendo al contenitore t fino a quando
+  //il numero dei pallini è uguale a quello delle immagini
   while (element < arrayImg) {
 
     var x = document.createElement("span");                        // Create a <p> node
