@@ -13,6 +13,7 @@ $(document).ready(function(){
 
   //Assegno in base ai selettori JQuery la class start ed end
   //al primo figlio e all'ultimo del loro contenitore .slider
+  //in modo tale da non doverla aggiungere in Html a mano
   firstImg.addClass('start active');
   lastImg.addClass('end');
 
