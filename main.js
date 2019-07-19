@@ -49,7 +49,7 @@ function prevSlide(){
   var active = $('img.active, .pallini span.active');
   if (active.hasClass("start")) {
 
-    img.removeClass("active");
+    active.removeClass("active");
     $('img.end, .pallini span:last-child').addClass('active');
 
   }else{
