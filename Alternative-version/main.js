@@ -7,9 +7,12 @@ $(document).ready(function(){
   var next = $('.next');
   var firstImg = $('.slider img:first-child');
   var lastImg = $('.slider img:last-child');
-
-  //Creo l'evento click sui controlli delle slide
-  //Azione per scrorrere in avanti
+  var firstPallino = $('.pallini span:first-child');
+  //Lunghezza array che contiene le immagini
+  var arrayImg = $('.slider img').length;
+  var pallini = $('.pallini');
+  //Contatore di appoggio per inserire un pallino ad ogni foto
+  var element = 0;
 
   //Assegno in base ai selettori JQuery la class start ed end
   //al primo figlio e all'ultimo del loro contenitore .slider
@@ -17,6 +20,26 @@ $(document).ready(function(){
   firstImg.addClass('start active');
   lastImg.addClass('end');
 
+
+  console.log(arrayImg);
+
+  while (element < arrayImg) {
+
+    var x = document.createElement("span");                        // Create a <p> node
+    var t = document.getElementById('palliniId')    // Create a text node
+    t.appendChild(x);
+    element++
+  }
+
+  firstPallino.addClass('active');
+
+
+
+
+
+
+  //Creo l'evento click sui controlli delle slide
+  //Azione per scrorrere in avanti
   next.click(nextSlide);
   prev.click(prevSlide);
   // activatePallino();
@@ -75,4 +98,11 @@ function prevSlide(){
 function activatePallino(object){
 
 
+}
+
+//Funzione per creare i pallini in base al numero di immagini
+//ed inserirli nel div in Html
+function palliniGenerator(){
+  var arrayImg = $('.slider img').length;
+   return arrayImg;
 }
