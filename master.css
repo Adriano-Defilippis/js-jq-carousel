@@ -26,6 +26,7 @@
 }
 
 .controls{
+  width: 10%;
   position: relative;
 }
 
@@ -33,6 +34,8 @@
 .controls i{
   position: absolute;
   top: 50%;
+  right: 50%;
+  transform: translate(50%);
 }
 
 
